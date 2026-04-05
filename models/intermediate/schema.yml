@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: int_orders_enriched
+    description: "결제 금액이 합산된 주문 모델 — stg_orders + stg_payments 조인"
+    columns:
+      - name: order_id
+        description: "주문 PK"
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "고객 FK"
+        tests:
+          - not_null
+      - name: amount
+        description: "주문 총 결제 금액 (dollars)"

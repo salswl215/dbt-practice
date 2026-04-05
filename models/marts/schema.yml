@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: fct_orders
+    description: "주문 팩트 테이블 — 분석의 핵심 테이블"
+    columns:
+      - name: order_id
+        description: "주문 PK"
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "고객 FK"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customers')
+              field: customer_id
+      - name: status
+        description: "주문 상태"
+      - name: amount
+        description: "주문 총 결제 금액 (dollars)"
+
+  - name: dim_customers
+    description: "고객 차원 테이블 — 고객별 첫 주문일, 최근 주문일, 주문 횟수, 총 구매 금액 포함"
+    columns:
+      - name: customer_id
+        description: "고객 PK"
+        tests:
+          - unique
+          - not_null
+      - name: lifetime_value
+        description: "고객 총 구매 금액 (dollars)"

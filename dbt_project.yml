@@ -1,0 +1,32 @@
+# Design Ref: §3.2 — dbt 프로젝트 메타 설정 (Option C Pragmatic)
+name: 'dbt_practice'
+version: '1.0.0'
+config-version: 2
+
+profile: 'dbt_practice'
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+analysis-paths: ["analyses"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# Plan SC: staging=view, marts=table (레이어별 materialization 차이 체험)
+models:
+  dbt_practice:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: view
+    marts:
+      +materialized: table
+
+seeds:
+  dbt_practice:
+    +column_types:
+      id: bigint
