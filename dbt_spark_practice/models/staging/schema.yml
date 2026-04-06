@@ -1,0 +1,73 @@
+# Design Ref: §4.1 — sources + 컬럼 테스트 통합 (Option C: sources.yml은 staging에만)
+version: 2
+
+sources:
+  - name: jaffle_shop
+    description: "Jaffle Shop 원천 데이터 (dbt seed로 로컬 Spark에 로드)"
+    schema: default
+    tables:
+      - name: raw_customers
+        description: "원천 고객 테이블"
+      - name: raw_orders
+        description: "원천 주문 테이블"
+      - name: raw_payments
+        description: "원천 결제 테이블"
+
+models:
+  - name: stg_customers
+    description: "정제된 고객 모델 — id를 customer_id로 rename"
+    columns:
+      - name: customer_id
+        description: "고객 PK"
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_orders
+    description: "정제된 주문 모델 — id/user_id rename, status 검증"
+    columns:
+      - name: order_id
+        description: "주문 PK"
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "고객 FK"
+        tests:
+          - not_null
+      - name: status
+        description: "주문 상태"
+        tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - placed
+                  - shipped
+                  - completed
+                  - return_pending
+                  - returned
+
+  - name: stg_payments
+    description: "정제된 결제 모델 — 금액 단위 cents → dollars 변환"
+    columns:
+      - name: payment_id
+        description: "결제 PK"
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        description: "주문 FK"
+        tests:
+          - not_null
+      - name: payment_method
+        description: "결제 수단"
+        tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - credit_card
+                  - coupon
+                  - bank_transfer
+                  - gift_card
+      - name: amount
+        description: "결제 금액 (dollars)"

@@ -1,0 +1,54 @@
+[0m16:41:25.214238 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f5ae850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112f1bad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112faffd0>]}
+
+
+============================== 16:41:25.218209 | 878b1c29-d4d2-48b9-84b8-4bbb26553fd1 ==============================
+[0m16:41:25.218209 [info ] [MainThread]: Running with dbt=1.11.7
+[0m16:41:25.218711 [debug] [MainThread]: running dbt with arguments {'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'cache_selected_only': 'False', 'empty': 'None', 'use_experimental_parser': 'False', 'use_colors': 'True', 'profiles_dir': '/Users/seominji/dbt/dbt-practice/.dbt', 'introspect': 'True', 'write_json': 'True', 'log_cache_events': 'False', 'invocation_command': 'dbt debug', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'debug': 'False', 'log_path': 'logs', 'printer_width': '80', 'no_print': 'None', 'target_path': 'None', 'partial_parse': 'True', 'log_format': 'default', 'indirect_selection': 'eager', 'warn_error': 'None', 'quiet': 'False', 'version_check': 'True'}
+[0m16:41:25.226452 [info ] [MainThread]: dbt version: 1.11.7
+[0m16:41:25.226788 [info ] [MainThread]: python version: 3.11.9
+[0m16:41:25.227062 [info ] [MainThread]: python path: /Users/seominji/dbt/dbt-practice/.venv/bin/python
+[0m16:41:25.227301 [info ] [MainThread]: os info: macOS-26.3-x86_64-i386-64bit
+[0m16:41:25.283195 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m16:41:25.283664 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m16:41:25.283923 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m16:41:25.308893 [info ] [MainThread]: Using profiles dir at /Users/seominji/dbt/dbt-practice/.dbt
+[0m16:41:25.309256 [info ] [MainThread]: Using profiles.yml file at /Users/seominji/dbt/dbt-practice/.dbt/profiles.yml
+[0m16:41:25.309505 [info ] [MainThread]: Using dbt_project.yml file at /Users/seominji/dbt/dbt-practice/dbt-spark-adapter/dbt_project.yml
+[0m16:41:25.309740 [info ] [MainThread]: adapter type: spark
+[0m16:41:25.309966 [info ] [MainThread]: adapter version: 1.10.1
+[0m16:41:25.310203 [info ] [MainThread]: Configuration:
+[0m16:41:25.310429 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m16:41:25.310646 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m16:41:25.310870 [info ] [MainThread]: Required dependencies:
+[0m16:41:25.311152 [debug] [MainThread]: Executing "git --help"
+[0m16:41:25.338721 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m16:41:25.339514 [debug] [MainThread]: STDERR: "b''"
+[0m16:41:25.339796 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m16:41:25.340069 [info ] [MainThread]: Connection:
+[0m16:41:25.340347 [info ] [MainThread]:   host: localhost
+[0m16:41:25.340573 [info ] [MainThread]:   port: 10000
+[0m16:41:25.340782 [info ] [MainThread]:   cluster: None
+[0m16:41:25.340989 [info ] [MainThread]:   endpoint: None
+[0m16:41:25.341197 [info ] [MainThread]:   schema: default
+[0m16:41:25.341403 [info ] [MainThread]:   organization: 0
+[0m16:41:25.341954 [info ] [MainThread]: Registered adapter: spark=1.10.1
+[0m16:41:25.418504 [debug] [MainThread]: Acquiring new spark connection 'debug'
+[0m16:41:25.419116 [debug] [MainThread]: Using spark connection "debug"
+[0m16:41:25.419351 [debug] [MainThread]: On debug: select 1 as id
+[0m16:41:25.419573 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:41:26.945578 [debug] [MainThread]: Spark adapter: Poll status: 2, query complete
+[0m16:41:26.948072 [debug] [MainThread]: SQL status: OK in 1.527 seconds
+[0m16:41:26.950847 [debug] [MainThread]: On debug: Close
+[0m16:41:26.968815 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m16:41:26.969876 [info ] [MainThread]: [31m1 check failed:[0m
+[0m16:41:26.970676 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </Users/seominji/dbt/dbt-practice/dbt-spark-adapter/dbt_project.yml> not found
+
+[0m16:41:26.976385 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 1.8391136, "process_in_blocks": "0", "process_kernel_time": 0.223353, "process_mem_max_rss": "122351616", "process_out_blocks": "0", "process_user_time": 1.120581}
+[0m16:41:26.976910 [debug] [MainThread]: Command `dbt debug` failed at 16:41:26.976829 after 1.84 seconds
+[0m16:41:26.977229 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m16:41:26.977535 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112fb4490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112fb6490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112f1e890>]}
+[0m16:41:26.977895 [debug] [MainThread]: Flushing usage events
+[0m16:41:28.025292 [debug] [MainThread]: An error was encountered while trying to flush usage events
